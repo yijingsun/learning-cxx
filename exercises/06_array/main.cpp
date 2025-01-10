@@ -21,6 +21,7 @@ int main(int argc, char **argv) {
     // ---- 不要修改以下代码 ----
     ASSERT(fibonacci(2) == 1, "fibonacci(2) should be 1");
     ASSERT(fibonacci(20) == 6765, "fibonacci(20) should be 6765");
+    // 耗时长
     ASSERT(fibonacci(80) == 23416728348467685, "fibonacci(80) should be 23416728348467685");
     return 0;
 }
