@@ -14,11 +14,19 @@ class Fibonacci {
 
 public:
     // TODO: 实现构造器
-    // Fibonacci()
+    Fibonacci() : cached(2) {
+        // 初始化数组的前三个元素
+        cache[0]=0;
+        cache[1]=1;
+        cache[2]=1;
+        // 将剩余元素初始化为0
+        std::fill(cache+3,cache+16,0);
+    }
+    
 
     // TODO: 实现正确的缓存优化斐波那契计算
     size_t get(int i) {
-        for (; false; ++cached) {
+        for (; cached<i+1; ++cached) {
             cache[cached] = cache[cached - 1] + cache[cached - 2];
         }
         return cache[i];
