@@ -9,7 +9,17 @@
 int main(int argc, char **argv) {
     std::vector<int> val{8, 13, 21, 34, 55};
     // TODO: 调用 `std::transform`，将 `v` 中的每个元素乘以 2，并转换为字符串，存入 `ans`
-    // std::vector<std::string> ans
+    // (输入容器 v 的起始迭代器, 输入容器 v 的结束迭代器, 表示输出容器 ans 的起始迭代器, 转换操作)
+    /*
+        [](int x) { return std::to_string(x * 2); } 是一个 lambda 函数，定义了对每个输入元素的转换逻辑。
+        参数 x：输入容器 v 中的每个元素。
+        操作 x * 2：将元素乘以 2。
+        std::to_string(x * 2)：将结果转换为字符串。
+    */
+    std::vector<std::string> ans(val.size());
+    std::transform(val.begin(), val.end(), ans.begin(), [](int x) {
+        return std::to_string(x * 2); // 将元素乘以 2 并转换为字符串
+    });
     ASSERT(ans.size() == val.size(), "ans size should be equal to val size");
     ASSERT(ans[0] == "16", "ans[0] should be 16");
     ASSERT(ans[1] == "26", "ans[1] should be 26");
