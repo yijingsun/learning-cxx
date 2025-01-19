@@ -1,5 +1,6 @@
 ﻿#include "../exercise.h"
 #include <cstring>
+
 // READ: 类模板 <https://zh.cppreference.com/w/cpp/language/class_template>
 
 template<class T> // 声明一个类模版
@@ -20,7 +21,7 @@ struct Tensor4D {
         }
         
         data = new T[size];
-        std::memcpy(data, data_, size * sizeof(T));
+        memcpy(data, data_, size * sizeof(T));
     }
     ~Tensor4D() {
         delete[] data;

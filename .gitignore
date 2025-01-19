@@ -5,3 +5,5 @@
 
 .*/
 !/.github/
+
+.DS_Store
