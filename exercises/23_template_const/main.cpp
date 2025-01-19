@@ -11,11 +11,11 @@ struct Tensor {
     Tensor(unsigned int const shape_[N]) {
         unsigned int size = 1;
         // TODO: 填入正确的 shape 并计算 size
-        for (int i = 0; i < 4; i++)
+        for (unsigned int i = 0; i < N; i++)
         {
             shape[i] = shape_[i];
         }
-        for (int i = 0; i < 4; i++)
+        for (unsigned int i = 0; i < N; i++)
         {
             size *= shape[i];
         }
@@ -56,7 +56,7 @@ private:
 int main(int argc, char **argv) {
     {
         unsigned int shape[]{2, 3, 4, 5};
-        auto tensor = Tensor<4, int>(shape);
+        auto tensor = Tensor<4, unsigned int>(shape);
 
         unsigned int i0[]{0, 0, 0, 0};
         tensor[i0] = 1;
