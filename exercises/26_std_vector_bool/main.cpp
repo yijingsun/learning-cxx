@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     ASSERT(vec.size() == 100, "Make this assertion pass.");
     // NOTICE: 平台相关！注意 CI:Ubuntu 上的值。
     std::cout << "sizeof(std::vector<bool>) = " << sizeof(std::vector<bool>) << std::endl;
-    ASSERT(sizeof(vec) == 40, "Fill in the correct value.");
+    ASSERT(sizeof(vec) == 24, "Fill in the correct value."); // macOS 输出24，之前一次在actions上运行的CI输出是40，取决于编译器、标准库实现、操作系统和架构（32位/64位）。
     {
         vec[20] = false;
         ASSERT(!vec[20], "Fill in `vec[20]` or `!vec[20]`.");
